@@ -1,0 +1,16 @@
+<h1>coucou INDEX</h1>
+
+<ol>
+  <% @articles.each do |article|  %>
+    <li>
+      <%= "#{article.title}" %>
+      <%= "#{article.content}"%>
+
+      <button> <%= link_to "Delete",
+            article_path(article),
+            method: :delete,
+            data: { confirm: "Are you sure?" }%>
+      </button>
+    </li>
+  <% end %>
+</ol>
